@@ -17,6 +17,12 @@
     <dependencies>
         <dependency>
             <groupId>com.kurkboard</groupId>
+            <artifactId>persistence</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.kurkboard</groupId>
             <artifactId>api</artifactId>
             <version>${project.version}</version>
         </dependency>
