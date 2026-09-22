@@ -43,14 +43,23 @@ public class CategoryController {
             @PathVariable("id") Integer id,
             @RequestBody CategoryEntity category) {
 
-        if (categoryService.findById(id).isEmpty()) {
+        CategoryEntity existing =
+                categoryService.findById(id).orElse(null);
+
+        if (existing == null) {
             return ResponseEntity.notFound().build();
         }
 
-        category.setId(id);
+        existing.setName(category.getName());
+        existing.setInitialFee(category.getInitialFee());
+        existing.setAdditionalFee(category.getAdditionalFee());
+        existing.setAttemptLimit(category.getAttemptLimit());
+        existing.setTournament(category.getTournament());
+        existing.setCategoryType(category.getCategoryType());
+        existing.setImageUrl(category.getImageUrl());
 
         return ResponseEntity.ok(
-                categoryService.save(category)
+                categoryService.save(existing)
         );
     }
 

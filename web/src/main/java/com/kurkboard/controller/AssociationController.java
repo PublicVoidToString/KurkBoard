@@ -31,19 +31,30 @@ public class AssociationController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    @PostMapping
+    public AssociationEntity create(
+            @RequestBody AssociationEntity association) {
+
+        return associationService.save(association);
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<AssociationEntity> update(
             @PathVariable("id") Integer id,
             @RequestBody AssociationEntity association) {
 
-        if (associationService.findById(id).isEmpty()) {
+        AssociationEntity existing = associationService.findById(id).orElse(null);
+
+        if (existing == null) {
             return ResponseEntity.notFound().build();
         }
 
-        association.setId(id);
+        existing.setName(association.getName());
+        existing.setWebsite(association.getWebsite());
+        existing.setLocation(association.getLocation());
 
         return ResponseEntity.ok(
-                associationService.save(association)
+                associationService.save(existing)
         );
     }
 

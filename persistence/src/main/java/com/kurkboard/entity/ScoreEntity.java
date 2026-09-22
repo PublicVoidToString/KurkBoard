@@ -29,13 +29,11 @@ public class ScoreEntity {
     }
 
     public ScoreEntity(
-            Integer id,
             BigDecimal score,
             AttemptEntity attempt,
             Short x,
             Short y
     ) {
-        this.id = id;
         this.score = score;
         this.attempt = attempt;
         this.x = x;
@@ -44,10 +42,6 @@ public class ScoreEntity {
 
     public Integer getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public BigDecimal getScore() {

@@ -24,12 +24,10 @@ public class CategoryTypeEntity {
     }
 
     public CategoryTypeEntity(
-            Integer id,
             String shortName,
             String description,
             Integer scoresPerAttempt
     ) {
-        this.id = id;
         this.shortName = shortName;
         this.description = description;
         this.scoresPerAttempt = scoresPerAttempt;
@@ -37,10 +35,6 @@ public class CategoryTypeEntity {
 
     public Integer getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getShortName() {

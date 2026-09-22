@@ -23,21 +23,15 @@ public class AttemptEntity {
     }
 
     public AttemptEntity(
-            Integer id,
             CompetitorEntity competitor,
             CategoryEntity category
     ) {
-        this.id = id;
         this.competitor = competitor;
         this.category = category;
     }
 
     public Integer getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public CompetitorEntity getCompetitor() {

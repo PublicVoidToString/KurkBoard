@@ -43,14 +43,19 @@ public class CompetitorController {
             @PathVariable("id") Integer id,
             @RequestBody CompetitorEntity competitor) {
 
-        if (competitorService.findById(id).isEmpty()) {
+        CompetitorEntity existing =
+                competitorService.findById(id).orElse(null);
+
+        if (existing == null) {
             return ResponseEntity.notFound().build();
         }
 
-        competitor.setId(id);
+        existing.setFirstName(competitor.getFirstName());
+        existing.setLastName(competitor.getLastName());
+        existing.setAssociation(competitor.getAssociation());
 
         return ResponseEntity.ok(
-                competitorService.save(competitor)
+                competitorService.save(existing)
         );
     }
 

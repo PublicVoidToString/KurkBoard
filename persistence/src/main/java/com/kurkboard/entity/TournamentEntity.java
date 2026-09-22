@@ -25,12 +25,10 @@ public class TournamentEntity {
     }
 
     public TournamentEntity(
-            Integer id,
             String name,
             LocalDate date,
             String imageUrl
     ) {
-        this.id = id;
         this.name = name;
         this.date = date;
         this.imageUrl = imageUrl;
@@ -38,10 +36,6 @@ public class TournamentEntity {
 
     public Integer getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getName() {

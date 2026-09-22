@@ -23,8 +23,7 @@ public class AssociationEntity {
     public AssociationEntity() {
     }
 
-    public AssociationEntity(Integer id, String name, String website, String location) {
-        this.id = id;
+    public AssociationEntity(String name, String website, String location) {
         this.name = name;
         this.website = website;
         this.location = location;
@@ -32,10 +31,6 @@ public class AssociationEntity {
 
     public Integer getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getName() {

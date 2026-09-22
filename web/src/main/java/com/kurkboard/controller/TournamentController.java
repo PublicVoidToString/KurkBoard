@@ -43,14 +43,19 @@ public class TournamentController {
             @PathVariable("id") Integer id,
             @RequestBody TournamentEntity tournament) {
 
-        if (tournamentService.findById(id).isEmpty()) {
+        TournamentEntity existing =
+                tournamentService.findById(id).orElse(null);
+
+        if (existing == null) {
             return ResponseEntity.notFound().build();
         }
 
-        tournament.setId(id);
+        existing.setName(tournament.getName());
+        existing.setDate(tournament.getDate());
+        existing.setImageUrl(tournament.getImageUrl());
 
         return ResponseEntity.ok(
-                tournamentService.save(tournament)
+                tournamentService.save(existing)
         );
     }
 

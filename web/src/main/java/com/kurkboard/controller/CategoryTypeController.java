@@ -43,14 +43,19 @@ public class CategoryTypeController {
             @PathVariable("id") Integer id,
             @RequestBody CategoryTypeEntity categoryType) {
 
-        if (categoryTypeService.findById(id).isEmpty()) {
+        CategoryTypeEntity existing =
+                categoryTypeService.findById(id).orElse(null);
+
+        if (existing == null) {
             return ResponseEntity.notFound().build();
         }
 
-        categoryType.setId(id);
+        existing.setShortName(categoryType.getShortName());
+        existing.setDescription(categoryType.getDescription());
+        existing.setScoresPerAttempt(categoryType.getScoresPerAttempt());
 
         return ResponseEntity.ok(
-                categoryTypeService.save(categoryType)
+                categoryTypeService.save(existing)
         );
     }
 

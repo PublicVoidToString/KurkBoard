@@ -39,7 +39,6 @@ public class CategoryEntity {
     }
 
     public CategoryEntity(
-            Integer id,
             String name,
             BigDecimal initialFee,
             BigDecimal additionalFee,
@@ -48,7 +47,6 @@ public class CategoryEntity {
             CategoryTypeEntity categoryType,
             String imageUrl
     ) {
-        this.id = id;
         this.name = name;
         this.initialFee = initialFee;
         this.additionalFee = additionalFee;
@@ -60,10 +58,6 @@ public class CategoryEntity {
 
     public Integer getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getName() {

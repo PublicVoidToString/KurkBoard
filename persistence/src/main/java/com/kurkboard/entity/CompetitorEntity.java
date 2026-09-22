@@ -25,12 +25,10 @@ public class CompetitorEntity {
     }
 
     public CompetitorEntity(
-            Integer id,
             String firstName,
             String lastName,
             AssociationEntity association
     ) {
-        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.association = association;
@@ -38,10 +36,6 @@ public class CompetitorEntity {
 
     public Integer getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getFirstName() {

@@ -43,14 +43,18 @@ public class AttemptController {
             @PathVariable("id") Integer id,
             @RequestBody AttemptEntity attempt) {
 
-        if (attemptService.findById(id).isEmpty()) {
+        AttemptEntity existing =
+                attemptService.findById(id).orElse(null);
+
+        if (existing == null) {
             return ResponseEntity.notFound().build();
         }
 
-        attempt.setId(id);
+        existing.setCompetitor(attempt.getCompetitor());
+        existing.setCategory(attempt.getCategory());
 
         return ResponseEntity.ok(
-                attemptService.save(attempt)
+                attemptService.save(existing)
         );
     }
 

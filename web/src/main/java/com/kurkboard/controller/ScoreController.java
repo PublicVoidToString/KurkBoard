@@ -43,14 +43,20 @@ public class ScoreController {
             @PathVariable("id") Integer id,
             @RequestBody ScoreEntity score) {
 
-        if (scoreService.findById(id).isEmpty()) {
+        ScoreEntity existing =
+                scoreService.findById(id).orElse(null);
+
+        if (existing == null) {
             return ResponseEntity.notFound().build();
         }
 
-        score.setId(id);
+        existing.setScore(score.getScore());
+        existing.setAttempt(score.getAttempt());
+        existing.setX(score.getX());
+        existing.setY(score.getY());
 
         return ResponseEntity.ok(
-                scoreService.save(score)
+                scoreService.save(existing)
         );
     }
 
