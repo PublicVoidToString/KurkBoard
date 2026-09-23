@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>KurkBoard Administration</title>
+</head>
+<body>
+
+<h1>KurkBoard Administration</h1>
+
+<p>Welcome, <span th:text="${#authentication.name}"></span>.</p>
+
+<p>Your role:</p>
+<ul>
+    <li th:each="authority : ${#authentication.authorities}"
+        th:text="${authority.authority}">
+    </li>
+</ul>
+
+<form method="post" action="/admin/logout">
+
+    <input
+            type="hidden"
+            th:name="${_csrf.parameterName}"
+            th:value="${_csrf.token}"
+    >
+
+    <button type="submit">Log out</button>
+
+</form>
+
+</body>
+</html>
