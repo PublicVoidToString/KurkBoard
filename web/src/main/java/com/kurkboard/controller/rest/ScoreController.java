@@ -1,4 +1,4 @@
-package com.kurkboard.controller;
+package com.kurkboard.controller.rest;
 
 import com.kurkboard.entity.ScoreEntity;
 import com.kurkboard.service.ScoreService;

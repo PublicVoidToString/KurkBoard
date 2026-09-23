@@ -1,4 +1,4 @@
-package com.kurkboard.controller;
+package com.kurkboard.controller.rest;
 
 import com.kurkboard.entity.AttemptEntity;
 import com.kurkboard.service.AttemptService;

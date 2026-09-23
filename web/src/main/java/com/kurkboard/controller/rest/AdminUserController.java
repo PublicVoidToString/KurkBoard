@@ -1,4 +1,4 @@
-package com.kurkboard.controller;
+package com.kurkboard.controller.rest;
 
 import com.kurkboard.dto.AdminResponse;
 import com.kurkboard.dto.CreateAdminRequest;

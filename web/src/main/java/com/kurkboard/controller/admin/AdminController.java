@@ -1,4 +1,4 @@
-package com.kurkboard.controller;
+package com.kurkboard.controller.admin;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

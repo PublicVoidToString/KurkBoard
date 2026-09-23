@@ -1,4 +1,4 @@
-package com.kurkboard.controller;
+package com.kurkboard.controller.rest;
 
 import com.kurkboard.entity.CategoryTypeEntity;
 import com.kurkboard.service.CategoryTypeService;
