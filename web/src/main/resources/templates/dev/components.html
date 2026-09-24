@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Components</title>
+
+    <th:block th:replace="~{components/button :: styles}"></th:block>
+    <th:block th:replace="~{components/score_table_user :: styles}"></th:block>
+    <th:block th:replace="~{components/score_table_admin :: styles}"></th:block>
+</head>
+
+<body>
+
+<h1>Components</h1>
+
+<section>
+    <h2>Buttons</h2>
+
+    <div>
+        <div th:replace="~{components/button :: button('confirm', 'confirm')}"></div>
+
+        <div th:replace="~{components/button :: button('option', 'option')}"></div>
+
+        <div th:replace="~{components/button :: button('danger', 'danger')}"></div>
+    </div>
+</section>
+
+
+<section>
+
+    <h2>Score Table - User</h2>
+
+    <table class="score-table">
+
+        <thead>
+        <tr>
+            <th class="score-table__player">
+                Player
+            </th>
+
+            <th colspan="3">
+                Scores
+            </th>
+
+            <th class="score-table__max">
+                Max
+            </th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <tr>
+            <td class="score-table__player">
+                JOHN
+            </td>
+
+            <td>12</td>
+            <td>15</td>
+            <td>25</td>
+
+            <td class="score-table__max">
+                25
+            </td>
+        </tr>
+
+        <tr>
+            <td class="score-table__player">
+                JACOB
+            </td>
+
+            <td>41</td>
+            <td>51</td>
+            <td>24</td>
+
+            <td class="score-table__max--active">
+                51
+            </td>
+        </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+<section>
+
+    <h2>Score Table - Admin</h2>
+
+    <table class="score-table-admin">
+
+        <thead>
+        <tr>
+            <th class="score-table-admin__player">
+                Player
+            </th>
+
+            <th colspan="3">
+                Scores
+            </th>
+
+            <th class="score-table-admin__max">
+                Max
+            </th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <tr>
+            <td class="score-table-admin__player">
+                JOHN
+            </td>
+
+            <td>
+                <a href="/admin/scores/john/1"
+                   class="score-table-admin__score-link">
+                    12
+                </a>
+            </td>
+
+            <td>
+                <a href="/admin/scores/john/2"
+                   class="score-table-admin__score-link">
+                    15
+                </a>
+            </td>
+
+            <td>
+                <a href="/admin/scores/john/3"
+                   class="score-table-admin__score-link">
+                    25
+                </a>
+            </td>
+
+            <td class="score-table-admin__max">
+                25
+            </td>
+        </tr>
+
+        <tr>
+            <td class="score-table-admin__player">
+                JACOB
+            </td>
+
+            <td>
+                <a href="/admin/scores/jacob/1"
+                   class="score-table-admin__score-link">
+                    41
+                </a>
+            </td>
+
+            <td>
+                <a href="/admin/scores/jacob/2"
+                   class="score-table-admin__score-link">
+                    51
+                </a>
+            </td>
+
+            <td>
+                <a href="/admin/scores/jacob/3"
+                   class="score-table-admin__score-link">
+                    24
+                </a>
+            </td>
+
+            <td class="score-table-admin__max--active">
+                51
+            </td>
+        </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+
+</body>
+</html>

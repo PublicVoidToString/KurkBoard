@@ -20,4 +20,9 @@ public class AdminController {
     public String forbidden() {
         return "admin/403";
     }
+
+    @GetMapping("/admin/components")
+    public String components() {
+        return "dev/components";
+    }
 }

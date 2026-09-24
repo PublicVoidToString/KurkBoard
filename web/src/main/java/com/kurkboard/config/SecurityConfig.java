@@ -42,7 +42,8 @@ public class SecurityConfig {
                         .requestMatchers(
                                 "/admin/login",
                                 "/admin/403",
-                                "/error"
+                                "/error",
+                                "/admin/components"
                         )
                         .permitAll()
 
