@@ -2,6 +2,11 @@ spring:
   config:
     import: classpath:application-persistence.yml
 
+# REMOVE IN PRODUCTION #
+  thymeleaf:
+    cache: false
+########################
+
 logging:
   level:
     org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping: TRACE

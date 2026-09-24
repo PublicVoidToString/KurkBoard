@@ -10,108 +10,70 @@
             --button-color-dark: #4b5563;
             --button-glow: rgba(107, 114, 128, 0.35);
 
-            /* Layout */
+            --button-color-hover: #7b808a;
+            --button-color-dark-hover: #5a5e68;
+            --button-glow-hover: rgba(123, 128, 138, 0.45);
+
             display: inline-flex;
             align-items: center;
             justify-content: center;
-
             min-width: 110px;
             padding: 9px 18px;
 
-            /* Frame */
             border: 1px solid var(--button-color-dark);
             border-radius: 8px;
 
-            /* Appearance */
             background: var(--button-color);
             color: #fff;
 
-            /* Typography */
             font: inherit;
             font-weight: 600;
-            letter-spacing: 0.02em;
 
-            /* Interaction */
             cursor: pointer;
-            user-select: none;
 
-            /* Depth */
             box-shadow:
-                0 3px 0 var(--button-color-dark),
-                0 8px 18px rgba(0, 0, 0, 0.25);
-
-            transition:
-                    transform 120ms ease,
-                    box-shadow 120ms ease,
-                    filter 120ms ease;
+                    0 3px 0 var(--button-color-dark),
+                    0 8px 18px rgba(0, 0, 0, 0.25);
         }
 
         .button:hover {
-            filter: brightness(1.08);
+            background: var(--button-color-hover);
+            border-color: var(--button-color-dark-hover);
 
             box-shadow:
-                    0 2px 0 var(--button-color-dark),
+                    0 2px 0 var(--button-color-dark-hover),
                     0 5px 12px rgba(0, 0, 0, 0.18),
-                    0 0 14px var(--button-glow);
-        }
-
-        .button:active {
-            transform: translateY(2px);
-
-            box-shadow:
-                    0 1px 0 var(--button-color-dark),
-                    0 3px 8px rgba(0, 0, 0, 0.6);
-        }
-
-        .button:focus-visible {
-            outline: 2px solid var(--button-color);
-            outline-offset: 3px;
+                    0 0 14px var(--button-glow-hover);
         }
 
         .button--confirm {
-            --button-color: #249116;
+            --button-color: #507040;
             --button-color-dark: #17630e;
             --button-glow: rgba(36, 145, 22, 0.45);
-        }
-        .button--confirm:hover {
-            --button-color: #2eaa1d;
-            --button-color-dark: #1d7413;
-            --button-glow: rgba(46, 170, 29, 0.55);
+
+            --button-color-hover: #1f7716;
+            --button-color-dark-hover: #1d7413;
+            --button-glow-hover: rgba(46, 170, 29, 0.55);
         }
 
         .button--option {
             --button-color: #777b84;
             --button-color-dark: #555861;
             --button-glow: rgba(119, 123, 132, 0.4);
-        }
-        .button--option:hover {
-            --button-color: #898e98;
-            --button-color-dark: #656a74;
-            --button-glow: rgba(137, 142, 152, 0.5);
+
+            --button-color-hover: #898e98;
+            --button-color-dark-hover: #656a74;
+            --button-glow-hover: rgba(137, 142, 152, 0.5);
         }
 
         .button--danger {
             --button-color: #b32222;
             --button-color-dark: #791515;
             --button-glow: rgba(179, 34, 34, 0.45);
-        }
-        .button--danger:hover {
-            --button-color: #cc2d2d;
-            --button-color-dark: #8f1a1a;
-            --button-glow: rgba(204, 45, 45, 0.55);
-        }
 
-        .button:disabled,
-        .button[disabled] {
-            opacity: 0.5;
-            cursor: not-allowed;
-            filter: grayscale(0.5);
-
-            transform: none;
-
-            box-shadow:
-                    0 2px 0 var(--button-color-dark),
-                    0 3px 6px rgba(0, 0, 0, 0.12);
+            --button-color-hover: #cc2d2d;
+            --button-color-dark-hover: #8f1a1a;
+            --button-glow-hover: rgba(204, 45, 45, 0.55);
         }
 
     </style>

@@ -9,8 +9,9 @@
     <title>Components</title>
 
     <th:block th:replace="~{components/button :: styles}"></th:block>
-    <th:block th:replace="~{components/score_table_user :: styles}"></th:block>
-    <th:block th:replace="~{components/score_table_admin :: styles}"></th:block>
+    <th:block th:replace="~{components/score_table :: styles}"></th:block>
+    <th:block th:replace="~{components/input_box :: styles}"></th:block>
+    <th:block th:replace="~{components/tournament_window :: styles}"></th:block>
 </head>
 
 <body>
@@ -92,11 +93,11 @@
 
     <h2>Score Table - Admin</h2>
 
-    <table class="score-table-admin">
+    <table class="score-table">
 
         <thead>
         <tr>
-            <th class="score-table-admin__player">
+            <th class="score-table__player">
                 Player
             </th>
 
@@ -104,7 +105,7 @@
                 Scores
             </th>
 
-            <th class="score-table-admin__max">
+            <th class="score-table__max">
                 Max
             </th>
         </tr>
@@ -113,63 +114,63 @@
         <tbody>
 
         <tr>
-            <td class="score-table-admin__player">
+            <td class="score-table__player">
                 JOHN
             </td>
 
             <td>
                 <a href="/admin/scores/john/1"
-                   class="score-table-admin__score-link">
+                   class="score-table__score-link">
                     12
                 </a>
             </td>
 
             <td>
                 <a href="/admin/scores/john/2"
-                   class="score-table-admin__score-link">
+                   class="score-table__score-link">
                     15
                 </a>
             </td>
 
             <td>
                 <a href="/admin/scores/john/3"
-                   class="score-table-admin__score-link">
+                   class="score-table__score-link">
                     25
                 </a>
             </td>
 
-            <td class="score-table-admin__max">
+            <td class="score-table__max">
                 25
             </td>
         </tr>
 
         <tr>
-            <td class="score-table-admin__player">
+            <td class="score-table__player">
                 JACOB
             </td>
 
             <td>
                 <a href="/admin/scores/jacob/1"
-                   class="score-table-admin__score-link">
+                   class="score-table__score-link">
                     41
                 </a>
             </td>
 
             <td>
                 <a href="/admin/scores/jacob/2"
-                   class="score-table-admin__score-link">
+                   class="score-table__score-link">
                     51
                 </a>
             </td>
 
             <td>
                 <a href="/admin/scores/jacob/3"
-                   class="score-table-admin__score-link">
+                   class="score-table__score-link">
                     24
                 </a>
             </td>
 
-            <td class="score-table-admin__max--active">
+            <td class="score-table__max--active">
                 51
             </td>
         </tr>
@@ -180,6 +181,80 @@
 
 </section>
 
+<section>
+
+    <h2>Text box</h2>
+
+    <div th:replace="~{components/input_box :: input(
+        'Title Label:',
+        'submittedID',
+        'text',
+        'Default Empty Text',
+        'Default Value'
+    )}"></div>
+
+    <div th:replace="~{components/input_box :: input(
+        'Title Label:',
+        'submittedID',
+        'text',
+        'Default Empty Text',
+        null
+    )}"></div>
+
+</section>
+
+
+<section>
+
+    <h2>Tournament Windows</h2>
+
+    <div class="tournament-window">
+
+        <div th:replace="~{components/tournament_window :: tournament(
+            1,
+            'Spring Championship',
+            '2026-04-12',
+            '/images/tournaments/test/poster.jpg'
+        )}"></div>
+
+        <div th:replace="~{components/tournament_window :: tournament(
+            2,
+            'Summer Championship',
+            '2026-06-21',
+            '/images/tournaments/test/poster.jpg'
+        )}"></div>
+
+        <div th:replace="~{components/tournament_window :: tournament(
+            3,
+            'Autumn Championship',
+            '2026-09-13',
+            '/images/tournaments/test/poster.jpg'
+        )}"></div>
+
+        <div th:replace="~{components/tournament_window :: tournament(
+            4,
+            'Winter Championship',
+            '2026-12-19',
+            '/images/tournaments/test/poster.jpg'
+        )}"></div>
+
+        <div th:replace="~{components/tournament_window :: tournament(
+            5,
+            'Grand Championship',
+            '2026-12-31',
+            '/images/tournaments/test/poster.jpg'
+        )}"></div>
+
+        <div th:replace="~{components/tournament_window :: tournament(
+            6,
+            'New Year Championship',
+            '2027-01-03',
+            '/images/tournaments/test/poster.jpg'
+        )}"></div>
+
+    </div>
+
+</section>
 
 </body>
 </html>
